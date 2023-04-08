@@ -16,7 +16,7 @@ function App() {
 
   return (
     <>
-      <div class="bg-cover bg-no-repeat bg-[url('./images/hero-bg.jpg')] bg-gray-700 bg-blend-multiply w-full h-screen pt-24">
+      <div class="bg-cover bg-no-repeat bg-[url('./images/hero-bg.jpg')] bg-gray-700 bg-blend-multiply w-full h-screen pt-24 overflow-y-scroll">
         {randomMovie.map((randomMovie) => {
           return <MovieCard {...randomMovie} />;
         })}
