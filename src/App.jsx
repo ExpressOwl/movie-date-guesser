@@ -14,11 +14,20 @@ function App() {
     fetchMovie();
   }, []);
 
+
   return (
     <>
-      <div class="bg-cover bg-no-repeat bg-[url('./images/hero-bg.jpg')] bg-gray-700 bg-blend-multiply w-full h-screen pt-24 overflow-y-scroll">
+      <div class="bg-cover bg-no-repeat bg-[url('./images/hero-bg.jpg')] bg-gray-700 bg-blend-multiply w-full h-screen pt-16 overflow-y-scroll">
         {randomMovie.map((randomMovie) => {
-          return <MovieCard {...randomMovie} />;
+          return (
+            <MovieCard
+              key={randomMovie.id}
+              poster_path={randomMovie.poster_path}
+              title={randomMovie.title}
+              release_date={randomMovie.release_date}
+              overview={randomMovie.overview}
+            />
+          );
         })}
       </div>
     </>
