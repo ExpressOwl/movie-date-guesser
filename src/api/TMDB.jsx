@@ -6,7 +6,7 @@ export default axios.create({
     Accept: "application/json"
   },
   params: {
-    api_key: 'process.env.REACT_APP_API_KEY',
+    api_key: d1c5515298bb4019f0d3e176df7c2aa1,
     region: 'US',
     sort_by: 'popularity.desc',
     include_adult: false,
