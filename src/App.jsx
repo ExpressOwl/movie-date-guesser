@@ -14,7 +14,6 @@ function App() {
     fetchMovie();
   }, []);
 
-
   return (
     <>
       <div class="bg-cover bg-no-repeat bg-[url('./images/hero-bg.jpg')] bg-gray-700 bg-blend-multiply w-full h-screen pt-16 overflow-y-scroll">
