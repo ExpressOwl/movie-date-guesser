@@ -1,6 +1,7 @@
 // import TMDB from "./api/TMDB";
 import { useEffect, useState } from "react";
 import MovieCard from "./Components/MovieCard";
+import axios from "axios";
 
 function App() {
   const [randomMovie, setRandomMovie] = useState([]);
