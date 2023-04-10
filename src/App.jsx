@@ -1,11 +1,11 @@
-import TMDB from "./api/TMDB";
+// import TMDB from "./api/TMDB";
 import { useEffect, useState } from "react";
 import MovieCard from "./Components/MovieCard";
 
 function App() {
   const [randomMovie, setRandomMovie] = useState([]);
 
-  axios.create({
+  const movie = axios.create({
     baseURL: 'https://api.themoviedb.org/3',
     headers: {
       Accept: "application/json"
@@ -21,7 +21,7 @@ function App() {
 
   useEffect(() => {
     const fetchMovie = async () => {
-      const { data } = await TMDB.get("discover/movie");
+      const { data } = await movie.get("discover/movie");
       setRandomMovie(data.results.slice(0, 1));
     };
 
