@@ -8,8 +8,7 @@ const MovieCard = ({ poster_path, title, release_date, overview }) => {
   const [date, setDate] = useState("");
 
   // Lifepoint functionality
-  const initialLives = 3;
-  const [lives, setLives] = useState(initialLives);
+  const [lives, setLives] = useState(3);
 
   const handleLostLives = () => {
     setLives(lives - 1);
@@ -25,8 +24,7 @@ const MovieCard = ({ poster_path, title, release_date, overview }) => {
   // Lifepoint functionality
 
   // Score
-  const initialScore = 0;
-  const [score, setScore] = useState(initialScore);
+  const [score, setScore] = useState(0);
 
   const handleScore = () => {
     setScore(score + 1);
@@ -60,7 +58,11 @@ const MovieCard = ({ poster_path, title, release_date, overview }) => {
   // Score
 
   // Reset
-
+  function reset() {
+    setLives(3);
+    localStorage.setItem("lives", lives + 3);
+    setScore(0);
+  }
   // Reset
 
   let releaseDateConvert = JSON.stringify({ release_date }).slice(17, 21);
@@ -189,7 +191,10 @@ const MovieCard = ({ poster_path, title, release_date, overview }) => {
             <div className="fixed top-0 left-0 right-0 bottom-0 bg-black/90 text-[#e1e1e1] flex justify-center items-center text-center">
               <div>
                 <p className="mb-8 text-3xl">Game Over!</p>
-                <button className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white text-white focus:ring-4 focus:outline-none focus:ring-blue-800">
+                <button
+                  onClick={reset}
+                  className="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white text-white focus:ring-4 focus:outline-none focus:ring-blue-800"
+                >
                   <span class="text-2xl relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-900 rounded-md group-hover:bg-opacity-0">
                     Play Again?
                   </span>
